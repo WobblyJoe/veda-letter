@@ -2,14 +2,23 @@
 import { useState } from "react";
 import "./App.css";
 
-const floatingFlowers = [
-  "🌷", "🪷", "🌷", "🩷", "🪷",
-  "🌷", "✨", "🪷", "💕", "🌷",
-  "🪷", "💗", "🌷", "✨", "🪷",
-  "🌷", "💖", "🪷", "🌷", "💕",
-  "🪷", "🌷", "✨", "🩷", "🪷",
-  "🌷", "🪷", "💞", "🌷", "✨",
+const flowerTypes = [
+  "🌷",
+  "🪷",
+  "🌷",
+  "🪷",
+  "🌷",
+  "🪷",
+  "🌷",
+  "🪷",
+  "✨",
+  "💕",
 ];
+
+const floatingFlowers = Array.from(
+  { length: 100 },
+  (_, index) => flowerTypes[index % flowerTypes.length]
+);
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,9 +33,9 @@ function App() {
               key={index}
               style={{
                 left: `${(index * 37 + 7) % 100}%`,
-                animationDelay: `${(index % 8) * 0.45}s`,
-                animationDuration: `${5 + (index % 5)}s`,
-                fontSize: `${18 + (index % 4) * 7}px`,
+                animationDelay: `${(index % 12) * 0.35}s`,
+                animationDuration: `${6 + (index % 6)}s`,
+                fontSize: `${20 + (index % 5) * 6}px`,
               }}
             >
               {flower}
@@ -49,9 +58,7 @@ function App() {
           Tap the envelope when you're ready, mi'lady.
         </p>
 
-        <div
-          className={`envelope ${isOpen ? "envelope-open" : ""}`}
-        >
+        <div className={`envelope ${isOpen ? "envelope-open" : ""}`}>
           <div className="envelope-flap" />
           <div className="envelope-heart">♡</div>
         </div>
@@ -88,7 +95,7 @@ function App() {
                 src="/veda.jpeg"
                 alt="A little memory together"
               />
-              <p>one of my favourite little moment ♡</p>
+              <p>one of my favourite little moments ♡</p>
             </div>
 
             <p>
