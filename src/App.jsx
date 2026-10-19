@@ -154,12 +154,15 @@ function App() {
               still room for a small smile.
             </p>
 
-            <p>
-              <strong>
-                goodnight, mi'lady. take care of yourself,
-                okay? ♡
-              </strong>
-            </p>
+           
+<p>
+  <strong>
+    take care of yourself, mi'lady.
+    i hope this little corner makes you smile,
+    whenever you need it. ♡
+  </strong>
+</p>
+
 
             <p className="letter-signoff">
               — your cool code guy
